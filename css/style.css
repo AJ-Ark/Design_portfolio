@@ -1080,6 +1080,155 @@ a, button, [role="button"] {
   margin-top: var(--space-sm);
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   PERSONA CARDS — Illustrated Characters
+   ═══════════════════════════════════════════════════════════════ */
+
+.personas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.persona-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 1px 4px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.persona-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.18), 0 4px 12px rgba(0,0,0,0.09);
+}
+
+/* Illustration area */
+.character-illustration {
+  width: 100%;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--persona-light, #F5F5F5) 0%, #ffffff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-illustration svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Floating card animations */
+@keyframes pfloat-a {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-6px) rotate(1deg); }
+}
+
+@keyframes pfloat-b {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-4px) rotate(-1deg); }
+}
+
+@keyframes pfloat-c {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+
+.pf-float-a { animation: pfloat-a 3.5s ease-in-out infinite; }
+.pf-float-b { animation: pfloat-b 4s ease-in-out infinite 0.6s; }
+.pf-float-c { animation: pfloat-c 3s ease-in-out infinite 1.2s; }
+
+/* Content area */
+.persona-content {
+  padding: 24px 22px 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.persona-role {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.persona-quote {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: #555;
+  margin: 0 0 18px;
+  padding-left: 12px;
+  border-left: 3px solid var(--persona-color, #FF6B35);
+  quotes: none;
+  line-height: 1.5;
+}
+
+/* Persona section block */
+.psec {
+  margin-bottom: 14px;
+}
+
+.psec-head {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.psec-head.frustrated { color: #FF6B35; }
+.psec-head.wants      { color: #4ECDC4; }
+.psec-head.uses       { color: #999; }
+
+/* Persona list item */
+.pitem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.pitem > span:first-child {
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pitem strong {
+  color: #111;
+}
+
+/* Tool items */
+.ptool {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  background: #f5f5f7;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.ptool i,
+.ptool svg {
+  width: 15px;
+  height: 15px;
+  color: var(--persona-color, #FF6B35);
+  flex-shrink: 0;
+}
+
 /* Journey Teaser */
 .journey-teaser {
   background: var(--bg-card);
@@ -3250,6 +3399,12 @@ a, button, [role="button"] {
     grid-template-columns: 1fr;
   }
 
+  .personas-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
   .insights-grid {
     gap: var(--space-md);
   }
@@ -5399,5 +5554,350 @@ a, button, [role="button"] {
 
   .ai-time-compare {
     gap: 16px;
+  }
+}
+
+/* ===================================
+   CRITICAL FAILURES SECTION
+   =================================== */
+
+.section-failures {
+  padding: var(--section-gap) 0;
+  background: var(--bg-primary);
+}
+
+/* Failure block */
+.failure-block {
+  margin-bottom: 6rem;
+}
+
+.failure-block:last-child {
+  margin-bottom: 0;
+}
+
+.failure-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.failure-number-badge {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(255, 107, 53, 0.1);
+  min-width: 72px;
+  flex-shrink: 0;
+}
+
+.failure-header-text {
+  flex: 1;
+  padding-top: 0.5rem;
+}
+
+.failure-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.failure-subtitle {
+  font-size: 1rem;
+  color: var(--text-tertiary);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Flow comparison grid */
+.failure-flow-comparison {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* Flow diagram card */
+.flow-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 28px 24px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+}
+
+.flow-diagram.problem {
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.flow-diagram.solution {
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.flow-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Flow steps */
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-node {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid var(--border-medium);
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+  min-width: 200px;
+  transition: all 0.3s;
+}
+
+.step-node.success {
+  border-color: rgba(16, 185, 129, 0.4);
+  background: rgba(16, 185, 129, 0.05);
+  color: var(--color-green);
+}
+
+.step-node.highlight {
+  background: rgba(255, 107, 53, 0.08);
+  border-color: var(--trmeric-primary);
+  color: var(--trmeric-primary);
+  font-weight: 600;
+}
+
+.step-node.error-node {
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.05);
+  color: #EF4444;
+}
+
+.flow-step.error .step-node {
+  border-color: rgba(239, 68, 68, 0.35);
+  background: rgba(239, 68, 68, 0.04);
+  color: #EF4444;
+}
+
+/* Wide node variant (parallel approvers / source tags) */
+.step-node-wide {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid var(--border-medium);
+  border-radius: 8px;
+  padding: 14px 16px;
+  min-width: 220px;
+  text-align: center;
+}
+
+.step-node-wide.parallel {
+  border-color: rgba(16, 185, 129, 0.4);
+  background: rgba(16, 185, 129, 0.04);
+}
+
+/* Source tags — Context Vacuum solution */
+.source-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--color-green);
+  letter-spacing: 0.5px;
+}
+
+.tag-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Parallel approvers — Approval Theater solution */
+.parallel-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-green);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.parallel-approvers {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.approver {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--color-green);
+}
+
+/* Connector lines */
+.flow-line {
+  width: 2px;
+  height: 26px;
+  background: var(--border-medium);
+  margin: 5px 0;
+}
+
+.flow-line.dashed {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(239, 68, 68, 0.5) 0,
+    rgba(239, 68, 68, 0.5) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+.flow-line.success {
+  background: rgba(16, 185, 129, 0.4);
+}
+
+/* Step labels */
+.step-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+}
+
+.step-label.error-label {
+  color: rgba(239, 68, 68, 0.65);
+}
+
+/* Step badge (green pill under highlight node) */
+.step-badge {
+  background: var(--trmeric-primary);
+  color: #ffffff;
+  padding: 3px 12px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 8px;
+  letter-spacing: 0.3px;
+}
+
+/* Stats row at bottom of diagram */
+.flow-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.flow-stats .stat {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.flow-stats.error .stat {
+  color: rgba(239, 68, 68, 0.75);
+}
+
+.flow-stats.success .stat {
+  color: var(--color-green);
+}
+
+/* Transformation indicator (center column) */
+.transformation-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px;
+}
+
+.arrow-large {
+  font-size: 36px;
+  color: var(--trmeric-primary);
+  animation: pulse-slow 2.5s ease-in-out infinite;
+  line-height: 1;
+}
+
+.transformation-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-green);
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 5px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .failure-flow-comparison {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .transformation-indicator {
+    flex-direction: row;
+    justify-content: center;
+    padding: 8px 0;
+  }
+
+  .arrow-large {
+    font-size: 28px;
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .failure-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .failure-number-badge {
+    font-size: 3.5rem;
+    min-width: auto;
+  }
+
+  .failure-title {
+    font-size: 1.4rem;
+  }
+
+  .step-node,
+  .step-node-wide {
+    min-width: 160px;
+    font-size: 12px;
+    padding: 9px 14px;
+  }
+
+  .flow-diagram {
+    padding: 22px 16px;
   }
 }
