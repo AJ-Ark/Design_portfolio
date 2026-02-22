@@ -52,8 +52,8 @@
   --space-md: 2rem;
   --space-lg: 4rem;
   --space-xl: 8rem;
-  --space-2xl: 10rem;
-  --section-gap: 10rem;
+  --space-2xl: 8rem;
+  --section-gap: 8rem;
 
   /* TYPOGRAPHY */
   --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
@@ -143,7 +143,7 @@ a, button, [role="button"] {
   justify-content: center;
   position: relative;
   padding: 8rem 2rem;
-  background: var(--bg-primary);
+  /*  */
 }
 
 .container-hero {
@@ -400,7 +400,7 @@ a, button, [role="button"] {
    =================================== */
 
 .section-impact {
-  background: var(--bg-primary);
+  /*  */
   overflow: hidden;
 }
 
@@ -1332,7 +1332,7 @@ a, button, [role="button"] {
    =================================== */
 
 .section-solution {
-  background: var(--bg-primary);
+  /*  */
   overflow: hidden;
 }
 
@@ -2258,7 +2258,7 @@ a, button, [role="button"] {
    =================================== */
 
 .section-reflection {
-  background: var(--bg-primary);
+  /*  */
   overflow: hidden;
 }
 
@@ -2424,7 +2424,7 @@ a, button, [role="button"] {
 }
 
 .learning-card {
-  background: var(--bg-primary);
+  
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
   padding: var(--space-xl);
@@ -2488,7 +2488,7 @@ a, button, [role="button"] {
    =================================== */
 
 .site-footer {
-  background: var(--bg-primary);
+  
 }
 
 .footer-cta {
@@ -5563,7 +5563,7 @@ a, button, [role="button"] {
 
 .section-failures {
   padding: var(--section-gap) 0;
-  background: var(--bg-primary);
+  
 }
 
 /* Failure block */
@@ -5899,5 +5899,246 @@ a, button, [role="button"] {
 
   .flow-diagram {
     padding: 22px 16px;
+  }
+}
+
+/* ===================================
+   INNOVATION ARCHITECTURE DIAGRAMS
+   =================================== */
+
+/* Stack container */
+.inn-arch-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Individual innovation block */
+.innovation-architecture {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 107, 53, 0.15);
+  border-radius: 16px;
+  padding: 36px;
+}
+
+/* Featured block (Innovation 02) */
+.inn-arch-featured-block {
+  border-color: rgba(255, 107, 53, 0.35);
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(255, 107, 53, 0.04) 100%);
+}
+
+/* ── Header ── */
+.architecture-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.inn-arch-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.inn-arch-num {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(255, 107, 53, 0.12);
+  min-width: 52px;
+}
+
+.inn-arch-num-featured {
+  color: rgba(255, 107, 53, 0.3);
+}
+
+.inn-arch-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 107, 53, 0.08);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  border-radius: 10px;
+  color: var(--trmeric-primary);
+}
+
+.inn-arch-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.inn-arch-icon-featured {
+  background: rgba(255, 107, 53, 0.14);
+  border-color: rgba(255, 107, 53, 0.4);
+}
+
+.inn-arch-heading {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.inn-arch-heading h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* UX Decision badge */
+.design-decision-badge {
+  background: var(--trmeric-primary);
+  color: #ffffff;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Diagram comparison grid ── */
+.architecture-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.arch-diagram {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.arch-diagram.old {
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.arch-diagram.new {
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.diagram-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.arch-diagram.old .diagram-label {
+  color: rgba(239, 68, 68, 0.8);
+}
+
+.arch-diagram.new .diagram-label {
+  color: rgba(16, 185, 129, 0.8);
+}
+
+.arch-diagram svg {
+  display: block;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* ── Explanation row ── */
+.architecture-explanation {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 20px 24px;
+  background: rgba(255, 107, 53, 0.04);
+  border: 1px solid rgba(255, 107, 53, 0.1);
+  border-radius: 10px;
+}
+
+.why-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--trmeric-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.why-section p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.impact-metric {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.metric-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.metric-value.highlight {
+  color: var(--color-green);
+}
+
+.metric-arrow {
+  color: var(--text-muted);
+  font-size: 18px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .architecture-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-explanation {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .impact-metric {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .innovation-architecture {
+    padding: 24px 20px;
+  }
+
+  .architecture-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .inn-arch-num {
+    font-size: 2.5rem;
+    min-width: auto;
+  }
+
+  .inn-arch-heading h3 {
+    font-size: 1.25rem;
+  }
+
+  .arch-diagram {
+    padding: 14px;
   }
 }
