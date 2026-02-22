@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trmeric Missions: AI-Powered Project Initiation | Aravind J</title>
   <meta name="description" content="From idea to execution in 10 minutes. Eliminating 8 weeks of enterprise project initiation with conversational AI.">
+  <meta name="theme-color" content="#050810">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🟠</text></svg>">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -22,10 +26,14 @@
 </head>
 <body>
 
+  <!-- Subtle grid overlay -->
+  <div class="grid-overlay" aria-hidden="true"></div>
+
   <main>
 
     <!-- HERO SECTION -->
     <section class="hero" id="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
       <div class="container-hero">
 
         <!-- Badge -->
@@ -1060,70 +1068,239 @@
           </div>
 
           <div class="feature-visual">
-            <div class="ui-mockup mockup-conversation">
-              <div class="mockup-placeholder">
-                <div class="placeholder-icon">
-                  <i data-lucide="message-square"></i>
+            <div class="tango-demo-wrapper">
+              <div class="demo-container">
+
+                <!-- LEFT: Chat Interface -->
+                <div class="chat-interface">
+                  <div class="chat-header">
+                    <div class="header-title">Tango Assistant</div>
+                    <div class="header-status"><span class="status-dot"></span> Online</div>
+                  </div>
+                  <div class="chat-messages" id="chatMessages"></div>
+                  <div class="chat-input-area" id="chatInputArea"></div>
                 </div>
-                <div class="placeholder-text">Tango Conversation Interface</div>
-                <div class="placeholder-note">Screenshot: Conversational AI intake showing adaptive questioning</div>
+
+                <!-- RIGHT: Live Canvas Preview -->
+                <div class="canvas-preview-live">
+                  <div class="canvas-header-live">Demand Canvas <span class="canvas-live-badge">Live</span></div>
+                  <div class="canvas-fields" id="canvasFields">
+                    <div class="field-group empty" id="field-project-type">
+                      <div class="field-label">Project Type</div>
+                      <div class="field-value">&mdash;</div>
+                    </div>
+                    <div class="field-group empty" id="field-goal">
+                      <div class="field-label">Primary Goal</div>
+                      <div class="field-value">&mdash;</div>
+                    </div>
+                    <div class="field-group empty" id="field-timeline">
+                      <div class="field-label">Timeline</div>
+                      <div class="field-value">&mdash;</div>
+                    </div>
+                    <div class="field-group empty" id="field-team">
+                      <div class="field-label">Team</div>
+                      <div class="field-value">&mdash;</div>
+                    </div>
+                    <div class="field-group empty" id="field-budget">
+                      <div class="field-label">Budget</div>
+                      <div class="field-value">&mdash;</div>
+                    </div>
+                  </div>
+                  <div class="canvas-confidence" id="canvasConfidence">
+                    <div class="confidence-label">Confidence</div>
+                    <div class="confidence-bar-track">
+                      <div class="confidence-bar-fill" id="confidenceFill" style="width: 0%"></div>
+                    </div>
+                    <div class="confidence-value" id="confidenceValue">0%</div>
+                  </div>
+                </div>
+
               </div>
+              <button class="demo-reset" id="resetDemo">&#8635; Reset Demo</button>
             </div>
           </div>
         </div>
 
-        <!-- Feature 2: AI Enrichment -->
-        <div class="design-feature feature-enrichment" data-animate="fade-up">
-          <div class="feature-visual">
-            <div class="ui-mockup mockup-enrichment">
-              <div class="mockup-placeholder">
-                <div class="placeholder-icon">
-                  <i data-lucide="sparkles"></i>
-                </div>
-                <div class="placeholder-text">AI Enrichment Process</div>
-                <div class="placeholder-note">Screenshot: 30-second enrichment showing progressive disclosure</div>
-              </div>
-            </div>
-          </div>
+        <!-- Feature 2: AI Enrichment — Redesigned -->
+        <div class="ai-enrich-section" data-animate="fade-up" id="aiEnrichDemo">
 
-          <div class="feature-content">
+          <!-- Section Header -->
+          <div class="ai-enrich-header">
             <div class="feature-label">02 &middot; AI ENRICHMENT</div>
             <h3 class="feature-title">30 Seconds of Intelligence</h3>
             <p class="feature-description">
-              While users wait 30 seconds, the system analyzes 200+ historical projects, identifies similar patterns, checks budget constraints, and scores strategic alignment. Progressive disclosure shows exactly what the AI is doing&mdash;no black box.
+              While users wait 30 seconds, the system analyzes 200+ historical projects, identifies patterns, checks constraints, and scores alignment. Watch what the AI discovers&mdash;no black box.
             </p>
+          </div>
 
-            <div class="enrichment-steps">
-              <div class="enrichment-step">
-                <div class="step-time">0-10s</div>
-                <div class="step-action">Fetching organizational data</div>
-                <div class="step-status">
-                  <div class="status-bar" style="width: 100%"></div>
+          <!-- Two-Column Layout -->
+          <div class="ai-enrich-grid">
+
+            <!-- LEFT: Live Analysis View -->
+            <div class="ai-scan-panel">
+              <!-- Scan Header -->
+              <div class="ai-scan-head">
+                <div class="ai-scan-pulse"></div>
+                <div class="ai-scan-info">
+                  <div class="ai-scan-title" id="aiScanTitle">Analyzing organizational data&hellip;</div>
+                  <div class="ai-scan-time" id="aiScanTime">0 seconds elapsed</div>
                 </div>
               </div>
 
-              <div class="enrichment-step">
-                <div class="step-time">10-20s</div>
-                <div class="step-action">Analyzing similar projects</div>
-                <div class="step-status">
-                  <div class="status-bar" style="width: 100%"></div>
+              <!-- Data Sources -->
+              <div class="ai-sources">
+                <div class="ai-source" data-source="projects">
+                  <div class="ai-source-ico">&#128202;</div>
+                  <div class="ai-source-name">Historical Projects</div>
+                  <div class="ai-source-count" data-target="247">0 found</div>
+                  <div class="ai-source-status ai-status-queued">Queued</div>
+                </div>
+                <div class="ai-source" data-source="resources">
+                  <div class="ai-source-ico">&#128101;</div>
+                  <div class="ai-source-name">Resource Availability</div>
+                  <div class="ai-source-count" data-target="427">0 resources</div>
+                  <div class="ai-source-status ai-status-queued">Queued</div>
+                </div>
+                <div class="ai-source" data-source="budget">
+                  <div class="ai-source-ico">&#128176;</div>
+                  <div class="ai-source-name">Budget Constraints</div>
+                  <div class="ai-source-count">Q1&ndash;Q4 data</div>
+                  <div class="ai-source-status ai-status-queued">Queued</div>
+                </div>
+                <div class="ai-source" data-source="strategy">
+                  <div class="ai-source-ico">&#127919;</div>
+                  <div class="ai-source-name">Strategic Alignment</div>
+                  <div class="ai-source-count">12 initiatives</div>
+                  <div class="ai-source-status ai-status-queued">Queued</div>
                 </div>
               </div>
 
-              <div class="enrichment-step">
-                <div class="step-time">20-30s</div>
-                <div class="step-action">Building recommendations</div>
-                <div class="step-status">
-                  <div class="status-bar" style="width: 100%"></div>
+              <!-- Analysis Phases -->
+              <div class="ai-phases">
+                <div class="ai-phase" data-phase="match">
+                  <div class="ai-phase-ico">&#128269;</div>
+                  <div class="ai-phase-info">
+                    <div class="ai-phase-name">Pattern Matching</div>
+                    <div class="ai-phase-bar"><div class="ai-phase-fill" id="phaseMatchFill"></div></div>
+                  </div>
                 </div>
+                <div class="ai-phase" data-phase="recommend">
+                  <div class="ai-phase-ico">&#129504;</div>
+                  <div class="ai-phase-info">
+                    <div class="ai-phase-name">Recommendation Engine</div>
+                    <div class="ai-phase-bar"><div class="ai-phase-fill" id="phaseRecommendFill"></div></div>
+                  </div>
+                </div>
+                <div class="ai-phase" data-phase="assemble">
+                  <div class="ai-phase-ico">&#128203;</div>
+                  <div class="ai-phase-info">
+                    <div class="ai-phase-name">Context Assembly</div>
+                    <div class="ai-phase-bar"><div class="ai-phase-fill" id="phaseAssembleFill"></div></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Replay -->
+              <button class="ai-replay-btn" id="aiReplayBtn">&#8635; Replay Analysis</button>
+            </div>
+
+            <!-- RIGHT: Insights Discovered -->
+            <div class="ai-insights-panel">
+              <div class="ai-insights-head">
+                <div class="ai-insights-title">What AI Discovered</div>
+                <div class="ai-insights-count" id="aiInsightCount">Waiting for analysis&hellip;</div>
+              </div>
+
+              <div class="ai-insights-list" id="aiInsightsList">
+
+                <!-- Insight 1: Similar Projects -->
+                <div class="ai-insight ai-insight-hidden" data-insight="1">
+                  <div class="ai-insight-ico">&#128269;</div>
+                  <div class="ai-insight-body">
+                    <div class="ai-insight-title">Found 3 Similar Cloud Migrations</div>
+                    <div class="ai-insight-rows">
+                      <div class="ai-insight-row">
+                        <span class="ai-row-label">Average Duration</span>
+                        <span class="ai-row-value">8.5 months</span>
+                      </div>
+                      <div class="ai-insight-row">
+                        <span class="ai-row-label">Budget Range</span>
+                        <span class="ai-row-value">$420K &ndash; $480K</span>
+                      </div>
+                      <div class="ai-insight-row">
+                        <span class="ai-row-label">Success Rate</span>
+                        <span class="ai-row-value ai-val-success">87% on-time</span>
+                      </div>
+                    </div>
+                    <div class="ai-insight-source">Based on: AWS Migration (2024), Azure Migration (2023), GCP Migration (2024)</div>
+                  </div>
+                </div>
+
+                <!-- Insight 2: Resource Conflict -->
+                <div class="ai-insight ai-insight-hidden" data-insight="2">
+                  <div class="ai-insight-ico">&#128101;</div>
+                  <div class="ai-insight-body">
+                    <div class="ai-insight-title">Team Availability Conflict Detected</div>
+                    <div class="ai-insight-warn">
+                      <div class="ai-warn-icon">&#9888;&#65039;</div>
+                      <div class="ai-warn-text">Sarah Chen (Cloud Architect) is 80% allocated until March. Consider delayed start or alternate: Michael Kim (92% match).</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Insight 3: Budget Alignment -->
+                <div class="ai-insight ai-insight-hidden" data-insight="3">
+                  <div class="ai-insight-ico">&#128176;</div>
+                  <div class="ai-insight-body">
+                    <div class="ai-insight-title">Budget Aligns with Q2 Allocation</div>
+                    <div class="ai-insight-rows">
+                      <div class="ai-insight-row">
+                        <span class="ai-row-label">Estimated Cost</span>
+                        <span class="ai-row-value">$450K</span>
+                      </div>
+                      <div class="ai-insight-row">
+                        <span class="ai-row-label">Q2 Available</span>
+                        <span class="ai-row-value">$680K</span>
+                      </div>
+                      <div class="ai-insight-row">
+                        <span class="ai-row-label">Confidence</span>
+                        <span class="ai-row-value ai-val-success">High &#10003;</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Insight 4: Strategic Alignment -->
+                <div class="ai-insight ai-insight-hidden" data-insight="4">
+                  <div class="ai-insight-ico">&#127919;</div>
+                  <div class="ai-insight-body">
+                    <div class="ai-insight-title">Supports 2 Strategic Initiatives</div>
+                    <div class="ai-insight-tags">
+                      <span class="ai-strat-tag">Cloud-First Transformation</span>
+                      <span class="ai-strat-tag">Cost Optimization 2025</span>
+                    </div>
+                    <div class="ai-insight-value">+25 strategic alignment score</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Time Savings -->
+              <div class="ai-time-saved ai-insight-hidden" id="aiTimeSaved">
+                <div class="ai-time-compare">
+                  <div class="ai-time-old">
+                    <div class="ai-time-label">Manual Research</div>
+                    <div class="ai-time-val">12+ hours</div>
+                  </div>
+                  <div class="ai-time-arrow">&rarr;</div>
+                  <div class="ai-time-new">
+                    <div class="ai-time-label">AI Enrichment</div>
+                    <div class="ai-time-val ai-time-orange">30 seconds</div>
+                  </div>
+                </div>
+                <div class="ai-time-desc">AI gathered context from 200+ projects, checked 427 resources, analyzed budget constraints, and scored strategic alignment&mdash;automatically.</div>
               </div>
             </div>
 
-            <div class="feature-stat">
-              <span class="stat-big">12+ hours</span>
-              <span class="stat-arrow">&rarr;</span>
-              <span class="stat-big highlight">30 seconds</span>
-            </div>
           </div>
         </div>
 
@@ -1138,13 +1315,367 @@
           </div>
 
           <div class="feature-visual-full">
-            <div class="ui-mockup mockup-canvas">
-              <div class="mockup-placeholder mockup-large">
-                <div class="placeholder-icon">
-                  <i data-lucide="layout-dashboard"></i>
+            <div class="demand-canvas-wrapper" id="demandCanvas">
+
+              <!-- ===== HEADER ===== -->
+              <div class="dc-header">
+                <div class="dc-header-left">
+                  <div class="dc-header-icon"><i data-lucide="target"></i></div>
+                  <div class="dc-header-info">
+                    <div class="dc-header-title">Marketing and Sales Data Analytics Platform</div>
+                    <div class="dc-header-subtitle">Overall Canvas</div>
+                  </div>
                 </div>
-                <div class="placeholder-text">Demand Canvas Interface</div>
-                <div class="placeholder-note">Screenshot: Complete demand canvas with inline editing and AI suggestions</div>
+                <div class="dc-header-right">
+                  <div class="dc-header-badge">
+                    <span class="dc-badge-logo">SAP</span>
+                    <span class="dc-badge-sep">&middot;</span>
+                    <span class="dc-badge-text">Leader: Kevin</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ===== 3-COLUMN BODY ===== -->
+              <div class="dc-body">
+
+                <!-- LEFT NAV SIDEBAR -->
+                <div class="dc-leftnav">
+                  <nav class="dc-nav">
+                    <a class="dc-nav-item dc-nav-active" href="#"><i data-lucide="layers" style="width:14px;height:14px;"></i> Shape</a>
+                    <div class="dc-nav-children">
+                      <a class="dc-nav-child" href="#">Demand insights</a>
+                      <a class="dc-nav-child" href="#">Business Problem</a>
+                      <a class="dc-nav-child" href="#">Description</a>
+                      <a class="dc-nav-child" href="#">Objectives</a>
+                      <a class="dc-nav-child" href="#">Key Results</a>
+                      <a class="dc-nav-child" href="#">Portfolio</a>
+                      <a class="dc-nav-child" href="#">Business priority</a>
+                      <a class="dc-nav-child" href="#">Timeline</a>
+                      <a class="dc-nav-child" href="#">Platform/Product</a>
+                      <a class="dc-nav-child" href="#">Constraints</a>
+                    </div>
+                    <a class="dc-nav-item" href="#"><i data-lucide="maximize-2" style="width:14px;height:14px;"></i> Scope</a>
+                    <a class="dc-nav-item" href="#"><i data-lucide="cpu" style="width:14px;height:14px;"></i> Solution</a>
+                    <a class="dc-nav-item" href="#"><i data-lucide="settings" style="width:14px;height:14px;"></i> Set-up</a>
+                    <a class="dc-nav-item" href="#"><i data-lucide="radio" style="width:14px;height:14px;"></i> Live</a>
+                  </nav>
+                  <div class="dc-nav-bottom">
+                    <a class="dc-nav-item" href="#"><i data-lucide="git-branch" style="width:14px;height:14px;"></i> Structure</a>
+                  </div>
+                </div>
+
+                <!-- MAIN SCROLLABLE CONTENT -->
+                <div class="dc-main" id="dcMain">
+
+                  <!-- Demand Insights (Purple) -->
+                  <div class="dc-card dc-card-purple">
+                    <div class="dc-card-head">
+                      <span class="dc-card-icon dc-icon-purple"><i data-lucide="lightbulb"></i></span>
+                      <span class="dc-card-label">Demand insights</span>
+                      <span class="dc-card-actions">
+                        <button class="dc-act"><i data-lucide="pencil"></i></button>
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Business Problem -->
+                  <div class="dc-card">
+                    <div class="dc-card-head">
+                      <span class="dc-card-icon"><i data-lucide="smile"></i></span>
+                      <span class="dc-card-label">Business Problem</span>
+                      <span class="dc-card-actions">
+                        <button class="dc-act"><i data-lucide="pencil"></i></button>
+                      </span>
+                    </div>
+                    <div class="dc-card-body">
+                      <p>The business problem is to decommission the SAC Risk Insights Dashboard, now migrated to Power BI, to achieve 100% reduction in SAC licensing costs, full migration of user access, and zero disruption to risk reporting workflows by 31 January 2025.</p>
+                    </div>
+                  </div>
+
+                  <!-- Description -->
+                  <div class="dc-card">
+                    <div class="dc-card-head">
+                      <span class="dc-card-icon"><i data-lucide="file-text"></i></span>
+                      <span class="dc-card-label">Description</span>
+                      <span class="dc-card-actions">
+                        <button class="dc-act"><i data-lucide="pencil"></i></button>
+                      </span>
+                    </div>
+                    <div class="dc-card-body">
+                      <ul class="dc-list">
+                        <li>This roadmap drives the strategic decommissioning of the SAC Risk Insights Dashboard, now fully migrated to Power BI, within BHP&rsquo;s Finance portfolio.</li>
+                        <li>The initiative aims to eliminate SAC licensing costs, ensure 100% user migration to Power BI, and maintain seamless risk reporting workflows.</li>
+                        <li>The project will focus on restricting legacy system access, developing a robust decommission plan, and executing a smooth transition by January 31, 2025.</li>
+                        <li>Key components include user access management, stakeholder communication, and risk mitigation to guarantee zero disruption.</li>
+                        <li>This effort directly supports BHP&rsquo;s goals of cost optimization, digital transformation, and operational excellence.</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Conversation Summary -->
+                  <div class="dc-card">
+                    <div class="dc-card-head">
+                      <span class="dc-card-icon"><i data-lucide="message-square"></i></span>
+                      <span class="dc-card-label">Conversation summary</span>
+                    </div>
+                  </div>
+
+                  <!-- Objectives -->
+                  <div class="dc-card">
+                    <div class="dc-card-head">
+                      <span class="dc-card-icon"><i data-lucide="crosshair"></i></span>
+                      <span class="dc-card-label">Objectives:</span>
+                      <span class="dc-card-actions">
+                        <button class="dc-act"><i data-lucide="pencil"></i></button>
+                      </span>
+                    </div>
+                    <div class="dc-card-body">
+                      <p>Build a centralized data analytics platform for marketing and sales teams, Enhance decision-making capabilities</p>
+                    </div>
+                  </div>
+
+                  <!-- Key Results -->
+                  <div class="dc-card">
+                    <div class="dc-card-head">
+                      <span class="dc-card-icon"><i data-lucide="trophy"></i></span>
+                      <span class="dc-card-label">Key Results:</span>
+                      <span class="dc-card-actions">
+                        <button class="dc-act"><i data-lucide="pencil"></i></button>
+                      </span>
+                    </div>
+                    <div class="dc-card-body">
+                      <ul class="dc-list">
+                        <li>The Marketing and Sales Data Analytics Platform aims to provide a centralized data analytics solution for the marketing.</li>
+                        <li>Achieve a 20% improvement in blog-to-product page conversion rates through optimized CTAs by Q4 2024.</li>
+                        <li>Increase average session duration on blog and product pages by implementing intuitive navigation by end of Q3 2024.</li>
+                      </ul>
+                      <button class="dc-thought-btn">See thought process <span class="dc-arrow">&nearr;</span></button>
+                    </div>
+                  </div>
+
+                  <!-- Portfolio -->
+                  <div class="dc-card">
+                    <div class="dc-card-head">
+                      <span class="dc-card-icon"><i data-lucide="briefcase"></i></span>
+                      <span class="dc-card-label">Portfolio:</span>
+                    </div>
+                    <div class="dc-card-body">
+                      <div class="dc-tags">
+                        <span class="dc-tag">Trmeric UX</span>
+                        <span class="dc-tag">Sales &amp; Marketing</span>
+                        <span class="dc-tag">Ecommerce and Omni-Channel</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Business Priority -->
+                  <div class="dc-card">
+                    <div class="dc-card-head">
+                      <span class="dc-card-icon"><i data-lucide="zap"></i></span>
+                      <span class="dc-card-label">Business priority</span>
+                      <span class="dc-priority-badge"><i data-lucide="star" style="width:13px;height:13px;"></i> Medium</span>
+                      <button class="dc-link-btn">Change priority</button>
+                    </div>
+                    <div class="dc-card-body">
+                      <div class="dc-note">
+                        <i data-lucide="lightbulb" style="width:15px;height:15px;flex-shrink:0;color:#FFA426;"></i>
+                        <span>High business value but blocked by funding uncertainty. Will move to High once budget approved.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Timeline -->
+                  <div class="dc-card">
+                    <div class="dc-card-head">
+                      <span class="dc-card-icon"><i data-lucide="calendar"></i></span>
+                      <span class="dc-card-label">Timeline</span>
+                    </div>
+                    <div class="dc-card-body">
+                      <div class="dc-dates">
+                        <div class="dc-date">
+                          <span class="dc-date-lbl">Start Date:</span>
+                          <span class="dc-date-val dc-green">27 September 2025</span>
+                        </div>
+                        <div class="dc-date">
+                          <span class="dc-date-lbl">End Date:</span>
+                          <span class="dc-date-val dc-orange">17 November 2025</span>
+                        </div>
+                      </div>
+                      <div class="dc-badge-green">Min Time to Value: 8 months</div>
+                    </div>
+                  </div>
+
+                  <!-- Platform/Product -->
+                  <div class="dc-card">
+                    <div class="dc-card-head">
+                      <span class="dc-card-icon"><i data-lucide="pen-tool"></i></span>
+                      <span class="dc-card-label">Platform/Product</span>
+                      <span class="dc-card-actions">
+                        <button class="dc-act"><i data-lucide="pencil"></i></button>
+                      </span>
+                    </div>
+                    <div class="dc-card-body">
+                      <div class="dc-tags">
+                        <span class="dc-tag">SAP MM</span>
+                        <span class="dc-tag">Salesforce service cloud</span>
+                        <span class="dc-tag">www.website.com</span>
+                        <span class="dc-tag dc-tag-orange">trmeric Tango</span>
+                        <span class="dc-tag">Tag title</span>
+                      </div>
+                      <button class="dc-thought-btn">See thought process <span class="dc-arrow">&nearr;</span></button>
+                    </div>
+                  </div>
+
+                  <!-- Constraints -->
+                  <div class="dc-card">
+                    <div class="dc-card-head">
+                      <span class="dc-card-icon"><i data-lucide="lock"></i></span>
+                      <span class="dc-card-label">Constrains:</span>
+                      <span class="dc-card-actions">
+                        <button class="dc-act"><i data-lucide="pencil"></i></button>
+                      </span>
+                    </div>
+                    <div class="dc-card-body">
+                      <ul class="dc-list">
+                        <li>The Marketing and Sales Data Analytics Platform aims to provide a centralized data analytics solution for the marketing and sales teams to enhance their decision-making capabilities.</li>
+                        <li>Increase average session duration on blog and product pages by implementing intuitive navigation and engaging layouts by end of Q3 2024.</li>
+                        <li>Achieve a 20% improvement in blog-to-product page conversion rates through optimized CTAs and streamlined user journeys by Q4 2024.</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Collapsible Sections -->
+                  <div class="dc-card dc-collapse" data-collapsed="true">
+                    <div class="dc-card-head dc-clickable">
+                      <span class="dc-card-icon"><i data-lucide="smile"></i></span>
+                      <span class="dc-card-label">Business Context &amp; Requestor Information</span>
+                      <button class="dc-act dc-chevron"><i data-lucide="chevron-down"></i></button>
+                    </div>
+                    <div class="dc-card-body dc-hidden">
+                      <p>Business context and requestor details would appear here when expanded.</p>
+                    </div>
+                  </div>
+
+                  <div class="dc-card dc-collapse" data-collapsed="true">
+                    <div class="dc-card-head dc-clickable">
+                      <span class="dc-card-icon"><i data-lucide="smile"></i></span>
+                      <span class="dc-card-label">Financial &amp; Funding</span>
+                      <button class="dc-act dc-chevron"><i data-lucide="chevron-down"></i></button>
+                    </div>
+                    <div class="dc-card-body dc-hidden">
+                      <p>Financial and funding details would appear here when expanded.</p>
+                    </div>
+                  </div>
+
+                  <div class="dc-card dc-collapse" data-collapsed="true">
+                    <div class="dc-card-head dc-clickable">
+                      <span class="dc-card-icon"><i data-lucide="smile"></i></span>
+                      <span class="dc-card-label">Service Approach &amp; Solution</span>
+                      <button class="dc-act dc-chevron"><i data-lucide="chevron-down"></i></button>
+                    </div>
+                    <div class="dc-card-body dc-hidden">
+                      <p>Service approach and solution details would appear here when expanded.</p>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- RIGHT SIDEBAR -->
+                <div class="dc-sidebar">
+
+                  <!-- Org Strategy -->
+                  <div class="dc-sb-section">
+                    <div class="dc-sb-head">
+                      <span class="dc-card-icon"><i data-lucide="crosshair"></i></span>
+                      <span class="dc-sb-title">Org strategy alignment:</span>
+                    </div>
+                    <div class="dc-sb-group">
+                      <div class="dc-sb-label">Organization:</div>
+                      <div class="dc-strategy"><span class="dc-dot dc-dot-orange"></span> Increase revenue and market expansion</div>
+                      <div class="dc-strategy"><span class="dc-dot dc-dot-orange"></span> Data-Driven Int Decision Making</div>
+                      <div class="dc-strategy"><span class="dc-dot dc-dot-orange"></span> Customer-Centricity</div>
+                      <div class="dc-strategy"><span class="dc-dot dc-dot-orange"></span> Operational Efficiency</div>
+                    </div>
+                    <div class="dc-sb-group">
+                      <div class="dc-sb-label">Portfolio:</div>
+                      <div class="dc-strategy"><span class="dc-dot dc-dot-purple"></span> Transition legacy systems to cloud-native</div>
+                      <div class="dc-strategy"><span class="dc-dot dc-dot-purple"></span> AI-embedded platforms</div>
+                    </div>
+                  </div>
+
+                  <!-- User Personas -->
+                  <div class="dc-sb-section">
+                    <div class="dc-sb-head">
+                      <span class="dc-card-icon"><i data-lucide="user"></i></span>
+                      <span class="dc-sb-title">User/Persona</span>
+                      <span class="dc-card-actions">
+                        <button class="dc-act"><i data-lucide="pencil"></i></button>
+                      </span>
+                    </div>
+                    <div class="dc-personas">
+                      <div class="dc-persona">
+                        <div class="dc-persona-circle dc-pc-blue">
+                          <i data-lucide="briefcase" style="width:18px;height:18px;"></i>
+                        </div>
+                        <span>Sales Team</span>
+                      </div>
+                      <div class="dc-persona">
+                        <div class="dc-persona-circle dc-pc-purple">
+                          <i data-lucide="user" style="width:18px;height:18px;"></i>
+                        </div>
+                        <span>CEO</span>
+                      </div>
+                      <div class="dc-persona">
+                        <div class="dc-persona-circle dc-pc-pink">
+                          <i data-lucide="heart" style="width:18px;height:18px;"></i>
+                        </div>
+                        <span>HR</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Details -->
+                  <div class="dc-sb-section">
+                    <div class="dc-sb-head">
+                      <span class="dc-sb-title">Details</span>
+                    </div>
+                    <div class="dc-details">
+                      <div class="dc-detail"><span class="dc-detail-icon"><i data-lucide="package" style="width:14px;height:14px;"></i></span> <span class="dc-detail-lbl">Demand type</span> <span class="dc-detail-val dc-val-blue">Enhancement</span></div>
+                      <div class="dc-detail"><span class="dc-detail-icon"><i data-lucide="wrench" style="width:14px;height:14px;"></i></span> <span class="dc-detail-lbl">Project type</span> <span class="dc-detail-val">Run</span></div>
+                      <div class="dc-detail"><span class="dc-detail-icon"><i data-lucide="bar-chart-2" style="width:14px;height:14px;"></i></span> <span class="dc-detail-lbl">Project Stage</span> <span class="dc-detail-val dc-val-green">Discovery</span></div>
+                      <div class="dc-detail"><span class="dc-detail-icon"><i data-lucide="refresh-cw" style="width:14px;height:14px;"></i></span> <span class="dc-detail-lbl">SDLC</span> <span class="dc-detail-val">Agile</span></div>
+                      <div class="dc-detail"><span class="dc-detail-icon"><i data-lucide="map-pin" style="width:14px;height:14px;"></i></span> <span class="dc-detail-lbl">Location</span> <span class="dc-detail-val">&#127470;&#127475; India</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Project Category -->
+                  <div class="dc-sb-section">
+                    <div class="dc-sb-head">
+                      <span class="dc-card-icon"><i data-lucide="tag"></i></span>
+                      <span class="dc-sb-title">Project category</span>
+                    </div>
+                    <div class="dc-tags">
+                      <span class="dc-tag">Workday</span>
+                      <span class="dc-tag">AI</span>
+                      <span class="dc-tag">Data</span>
+                    </div>
+                  </div>
+
+                  <!-- Technology Stack -->
+                  <div class="dc-sb-section">
+                    <div class="dc-sb-head">
+                      <span class="dc-card-icon"><i data-lucide="settings"></i></span>
+                      <span class="dc-sb-title">Technology Stack</span>
+                    </div>
+                    <div class="dc-tags">
+                      <span class="dc-tag dc-tag-orange">AI</span>
+                      <span class="dc-tag">Figma</span>
+                      <span class="dc-tag">Data</span>
+                    </div>
+                  </div>
+
+                </div>
+
               </div>
             </div>
           </div>
@@ -1172,13 +1703,190 @@
         <!-- Feature 4: Resource Allocation -->
         <div class="design-feature feature-resources" data-animate="fade-up">
           <div class="feature-visual">
-            <div class="ui-mockup mockup-resources">
-              <div class="mockup-placeholder">
-                <div class="placeholder-icon">
-                  <i data-lucide="users"></i>
+            <div class="resource-demo-wrapper" id="resourceDemo">
+              <!-- Demo Header -->
+              <div class="rd-header">
+                <div class="rd-title-row">
+                  <div class="rd-icon-box">
+                    <i data-lucide="users"></i>
+                  </div>
+                  <div>
+                    <div class="rd-title">Smart Resource Matching</div>
+                    <div class="rd-subtitle">Cloud Migration · Phase 2</div>
+                  </div>
                 </div>
-                <div class="placeholder-text">Resource Allocation Interface</div>
-                <div class="placeholder-note">Screenshot: Context-aware resource suggestions with availability filtering</div>
+                <div class="rd-match-count">5 of 427 shown</div>
+              </div>
+
+              <!-- Active Filters -->
+              <div class="rd-filters">
+                <span class="rd-filter-tag" data-filter="cloud">
+                  Cloud Migration <span class="rd-filter-x">&times;</span>
+                </span>
+                <span class="rd-filter-tag" data-filter="available">
+                  Available Now <span class="rd-filter-x">&times;</span>
+                </span>
+                <span class="rd-filter-tag rd-filter-accent" data-filter="match">
+                  90%+ Match <span class="rd-filter-x">&times;</span>
+                </span>
+              </div>
+
+              <!-- Resource Cards -->
+              <div class="rd-cards">
+                <!-- Card 1 -->
+                <div class="rd-card rd-card-top" data-resource="sarah">
+                  <div class="rd-card-left">
+                    <div class="rd-avatar" style="background: linear-gradient(135deg, #FF6B35, #FFA426);">SC</div>
+                    <div class="rd-info">
+                      <div class="rd-name">Sarah Chen</div>
+                      <div class="rd-role">Sr. Cloud Architect</div>
+                    </div>
+                  </div>
+                  <div class="rd-card-right">
+                    <div class="rd-score">95%</div>
+                    <div class="rd-score-label">match</div>
+                  </div>
+                  <div class="rd-card-details">
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">Availability</span>
+                      <div class="rd-bar-track"><div class="rd-bar-fill" style="width: 80%;"></div></div>
+                      <span class="rd-detail-value">80%</span>
+                    </div>
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">AWS Certified</span>
+                      <span class="rd-badge rd-badge-green">Verified</span>
+                    </div>
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">Current Load</span>
+                      <span class="rd-detail-value">2 projects</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="rd-card" data-resource="john">
+                  <div class="rd-card-left">
+                    <div class="rd-avatar" style="background: linear-gradient(135deg, #4A90D9, #67B8F7);">JD</div>
+                    <div class="rd-info">
+                      <div class="rd-name">John Davis</div>
+                      <div class="rd-role">DevOps Engineer</div>
+                    </div>
+                  </div>
+                  <div class="rd-card-right">
+                    <div class="rd-score">92%</div>
+                    <div class="rd-score-label">match</div>
+                  </div>
+                  <div class="rd-card-details">
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">Availability</span>
+                      <div class="rd-bar-track"><div class="rd-bar-fill" style="width: 60%;"></div></div>
+                      <span class="rd-detail-value">60%</span>
+                    </div>
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">Kubernetes</span>
+                      <span class="rd-badge rd-badge-green">Expert</span>
+                    </div>
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">Current Load</span>
+                      <span class="rd-detail-value">3 projects</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="rd-card" data-resource="alex">
+                  <div class="rd-card-left">
+                    <div class="rd-avatar" style="background: linear-gradient(135deg, #8B5CF6, #A78BFA);">AM</div>
+                    <div class="rd-info">
+                      <div class="rd-name">Alex Morgan</div>
+                      <div class="rd-role">Solutions Architect</div>
+                    </div>
+                  </div>
+                  <div class="rd-card-right">
+                    <div class="rd-score">88%</div>
+                    <div class="rd-score-label">match</div>
+                  </div>
+                  <div class="rd-card-details">
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">Availability</span>
+                      <div class="rd-bar-track"><div class="rd-bar-fill" style="width: 90%;"></div></div>
+                      <span class="rd-detail-value">90%</span>
+                    </div>
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">Azure + AWS</span>
+                      <span class="rd-badge rd-badge-blue">Multi-cloud</span>
+                    </div>
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">Current Load</span>
+                      <span class="rd-detail-value">1 project</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="rd-card" data-resource="rita">
+                  <div class="rd-card-left">
+                    <div class="rd-avatar" style="background: linear-gradient(135deg, #10B981, #34D399);">RP</div>
+                    <div class="rd-info">
+                      <div class="rd-name">Rita Patel</div>
+                      <div class="rd-role">Cloud Security Lead</div>
+                    </div>
+                  </div>
+                  <div class="rd-card-right">
+                    <div class="rd-score">85%</div>
+                    <div class="rd-score-label">match</div>
+                  </div>
+                  <div class="rd-card-details">
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">Availability</span>
+                      <div class="rd-bar-track"><div class="rd-bar-fill" style="width: 70%;"></div></div>
+                      <span class="rd-detail-value">70%</span>
+                    </div>
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">CISSP</span>
+                      <span class="rd-badge rd-badge-green">Certified</span>
+                    </div>
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">Current Load</span>
+                      <span class="rd-detail-value">2 projects</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="rd-card" data-resource="michael">
+                  <div class="rd-card-left">
+                    <div class="rd-avatar" style="background: linear-gradient(135deg, #F59E0B, #FBBF24);">MK</div>
+                    <div class="rd-info">
+                      <div class="rd-name">Michael Kim</div>
+                      <div class="rd-role">Data Engineer</div>
+                    </div>
+                  </div>
+                  <div class="rd-card-right">
+                    <div class="rd-score">82%</div>
+                    <div class="rd-score-label">match</div>
+                  </div>
+                  <div class="rd-card-details">
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">Availability</span>
+                      <div class="rd-bar-track"><div class="rd-bar-fill" style="width: 50%;"></div></div>
+                      <span class="rd-detail-value">50%</span>
+                    </div>
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">Spark + Kafka</span>
+                      <span class="rd-badge rd-badge-blue">Advanced</span>
+                    </div>
+                    <div class="rd-detail-row">
+                      <span class="rd-detail-label">Current Load</span>
+                      <span class="rd-detail-value">4 projects</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer -->
+              <div class="rd-footer">
+                <button class="rd-view-all">View All 427 Resources</button>
               </div>
             </div>
           </div>
@@ -1236,62 +1944,188 @@
           </div>
         </div>
 
-        <!-- Feature 5: Canvas Transformation -->
-        <div class="design-feature feature-transformation" data-animate="fade-up">
-          <div class="feature-content-full">
+        <!-- Feature 5: Canvas Transformation — Full-Width Interactive -->
+        <div class="tf-fullwidth" id="transformDemo" data-animate="fade-up">
+
+          <!-- Header -->
+          <div class="tf-header">
             <div class="feature-label">05 &middot; DEMAND &rarr; PROJECT TRANSFORMATION</div>
             <h3 class="feature-title">One Click, Fully Formed</h3>
             <p class="feature-description">
-              Approved demands convert to execution-ready project canvases in one click. Not empty shells&mdash;complete with team, milestones, dependencies, budget breakdown, and success criteria. Eliminated 1-3 hour post-creation setup.
+              Click the button to see approved demands transform into execution-ready projects. Complete context inheritance&mdash;no copy-paste, no rework.
             </p>
           </div>
 
-          <div class="transformation-visual">
-            <div class="transformation-stage">
-              <div class="stage-label-text">Demand Canvas</div>
-              <div class="stage-mockup">
-                <div class="mockup-mini">
-                  <div class="mini-header">DEMAND</div>
-                  <div class="mini-content">
-                    <div class="mini-line"></div>
-                    <div class="mini-line short"></div>
-                    <div class="mini-line"></div>
+          <!-- 3-Column Stage -->
+          <div class="tf-stage">
+
+            <!-- LEFT: Demand Canvas -->
+            <div class="tf-canvas tf-demand">
+              <div class="tf-canvas-header">
+                <span class="tf-canvas-dot tf-dot-green"></span>
+                <span class="tf-canvas-label">DEMAND CANVAS</span>
+                <span class="tf-status tf-status-approved">Approved</span>
+              </div>
+              <div class="tf-canvas-body">
+                <div class="tf-card" data-tf-id="problem">
+                  <div class="tf-card-icon">&#128161;</div>
+                  <div class="tf-card-content">
+                    <div class="tf-card-title">Business Problem</div>
+                    <div class="tf-card-text">Decommission SAC Dashboard &amp; migrate 12 teams to Power BI</div>
+                  </div>
+                </div>
+                <div class="tf-card" data-tf-id="objectives">
+                  <div class="tf-card-icon">&#127919;</div>
+                  <div class="tf-card-content">
+                    <div class="tf-card-title">Objectives</div>
+                    <div class="tf-card-text">100% cost reduction on SAC licenses ($180K/yr savings)</div>
+                  </div>
+                </div>
+                <div class="tf-card" data-tf-id="timeline">
+                  <div class="tf-card-icon">&#128197;</div>
+                  <div class="tf-card-content">
+                    <div class="tf-card-title">Timeline</div>
+                    <div class="tf-card-text">Target: 9 months (3 phases)</div>
+                  </div>
+                </div>
+                <div class="tf-card" data-tf-id="team">
+                  <div class="tf-card-icon">&#128101;</div>
+                  <div class="tf-card-content">
+                    <div class="tf-card-title">Team Needed</div>
+                    <div class="tf-card-text">1 Architect, 2 Engineers, 1 PM</div>
+                  </div>
+                </div>
+                <div class="tf-card" data-tf-id="budget">
+                  <div class="tf-card-icon">&#128176;</div>
+                  <div class="tf-card-content">
+                    <div class="tf-card-title">Budget</div>
+                    <div class="tf-card-text">$420K &ndash; $480K estimated</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="transformation-action">
-              <div class="action-button">
-                <i data-lucide="play"></i>
-                <span>Convert to Project</span>
+            <!-- CENTER: Action -->
+            <div class="tf-center">
+              <!-- Particle canvas for flying dots -->
+              <canvas class="tf-particles" id="tfParticles"></canvas>
+
+              <div class="tf-arrow-track tf-arrow-in">
+                <div class="tf-arrow-line"></div>
+                <div class="tf-arrow-head"><i data-lucide="chevron-right"></i></div>
               </div>
-              <div class="action-note">1 click &middot; Inherits all context</div>
+
+              <button class="tf-btn" id="tfConvertBtn" type="button">
+                <div class="tf-btn-glow"></div>
+                <div class="tf-btn-inner">
+                  <i data-lucide="zap" class="tf-btn-icon"></i>
+                  <span class="tf-btn-label">Convert to Project</span>
+                </div>
+                <div class="tf-btn-sub">Click to transform</div>
+              </button>
+
+              <div class="tf-arrow-track tf-arrow-out">
+                <div class="tf-arrow-head"><i data-lucide="chevron-right"></i></div>
+                <div class="tf-arrow-line"></div>
+              </div>
+
+              <!-- Stats that appear after conversion -->
+              <div class="tf-convert-stats" id="tfStats">
+                <div class="tf-stat-item">
+                  <div class="tf-stat-num">5</div>
+                  <div class="tf-stat-label">fields inherited</div>
+                </div>
+                <div class="tf-stat-item">
+                  <div class="tf-stat-num">3</div>
+                  <div class="tf-stat-label">auto-generated</div>
+                </div>
+                <div class="tf-stat-item">
+                  <div class="tf-stat-num">0s</div>
+                  <div class="tf-stat-label">manual entry</div>
+                </div>
+              </div>
             </div>
 
-            <div class="transformation-stage">
-              <div class="stage-label-text">Project Canvas</div>
-              <div class="stage-mockup">
-                <div class="mockup-mini mockup-project">
-                  <div class="mini-header">PROJECT</div>
-                  <div class="mini-content">
-                    <div class="mini-section">
-                      <div class="mini-section-icon">&#128101;</div>
-                      <div class="mini-section-label">Team</div>
+            <!-- RIGHT: Project Canvas -->
+            <div class="tf-canvas tf-project">
+              <div class="tf-canvas-header">
+                <span class="tf-canvas-dot tf-dot-orange"></span>
+                <span class="tf-canvas-label">PROJECT CANVAS</span>
+                <span class="tf-status tf-status-ready" id="tfProjectStatus">Waiting&hellip;</span>
+              </div>
+              <div class="tf-canvas-body" id="tfProjectBody">
+                <!-- Empty state -->
+                <div class="tf-empty" id="tfEmpty">
+                  <div class="tf-empty-icon"><i data-lucide="inbox"></i></div>
+                  <div class="tf-empty-text">Click &ldquo;Convert to Project&rdquo; to generate</div>
+                </div>
+
+                <!-- Cards revealed after conversion (hidden initially) -->
+                <div class="tf-card tf-card-hidden tf-card-result" data-tf-id="team" data-tf-type="inherited">
+                  <div class="tf-card-icon">&#128101;</div>
+                  <div class="tf-card-content">
+                    <div class="tf-card-title-row">
+                      <span class="tf-card-title">Team</span>
+                      <span class="tf-badge tf-badge-inherited">INHERITED</span>
                     </div>
-                    <div class="mini-section">
-                      <div class="mini-section-icon">&#128197;</div>
-                      <div class="mini-section-label">Milestones</div>
+                    <div class="tf-card-check"><i data-lucide="check" class="tf-ico-check"></i> Sarah Chen &ndash; Cloud Architect</div>
+                    <div class="tf-card-check"><i data-lucide="check" class="tf-ico-check"></i> 2 Engineers assigned</div>
+                    <div class="tf-card-check"><i data-lucide="check" class="tf-ico-check"></i> PM: David Liu</div>
+                  </div>
+                </div>
+                <div class="tf-card tf-card-hidden tf-card-result" data-tf-id="milestones" data-tf-type="new">
+                  <div class="tf-card-icon">&#128197;</div>
+                  <div class="tf-card-content">
+                    <div class="tf-card-title-row">
+                      <span class="tf-card-title">Milestones</span>
+                      <span class="tf-badge tf-badge-new"><i data-lucide="sparkles" class="tf-ico-sparkle"></i> AUTO</span>
                     </div>
-                    <div class="mini-section">
-                      <div class="mini-section-icon">&#128176;</div>
-                      <div class="mini-section-label">Budget</div>
+                    <div class="tf-card-check"><i data-lucide="check" class="tf-ico-check"></i> Kickoff &ndash; Week 1</div>
+                    <div class="tf-card-check"><i data-lucide="check" class="tf-ico-check"></i> Infrastructure &ndash; Week 4</div>
+                    <div class="tf-card-check"><i data-lucide="check" class="tf-ico-check"></i> Migration &ndash; Week 8</div>
+                    <div class="tf-card-check"><i data-lucide="check" class="tf-ico-check"></i> Go-Live &ndash; Week 12</div>
+                  </div>
+                </div>
+                <div class="tf-card tf-card-hidden tf-card-result" data-tf-id="budget" data-tf-type="inherited">
+                  <div class="tf-card-icon">&#128176;</div>
+                  <div class="tf-card-content">
+                    <div class="tf-card-title-row">
+                      <span class="tf-card-title">Budget Breakdown</span>
+                      <span class="tf-badge tf-badge-inherited">INHERITED</span>
                     </div>
+                    <div class="tf-card-text">$450K allocated &middot; 3 cost centers</div>
+                  </div>
+                </div>
+                <div class="tf-card tf-card-hidden tf-card-result" data-tf-id="risks" data-tf-type="new">
+                  <div class="tf-card-icon">&#9888;&#65039;</div>
+                  <div class="tf-card-content">
+                    <div class="tf-card-title-row">
+                      <span class="tf-card-title">Risk Register</span>
+                      <span class="tf-badge tf-badge-new"><i data-lucide="sparkles" class="tf-ico-sparkle"></i> AUTO</span>
+                    </div>
+                    <div class="tf-card-text">3 risks identified &middot; Mitigations mapped</div>
+                  </div>
+                </div>
+                <div class="tf-card tf-card-hidden tf-card-result" data-tf-id="success" data-tf-type="inherited">
+                  <div class="tf-card-icon">&#9989;</div>
+                  <div class="tf-card-content">
+                    <div class="tf-card-title-row">
+                      <span class="tf-card-title">Success Criteria</span>
+                      <span class="tf-badge tf-badge-inherited">INHERITED</span>
+                    </div>
+                    <div class="tf-card-text">100% cost reduction on SAC licenses</div>
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
+
+          <!-- Bottom CTA after conversion -->
+          <div class="tf-bottom-msg" id="tfBottomMsg">
+            <span class="tf-saved-time">1&ndash;3 hours of setup &rarr; eliminated</span>
+          </div>
+
         </div>
 
       </div>
@@ -1540,7 +2374,17 @@
 
   </footer>
 
+  <!-- Scroll to top -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/tango-demo.js"></script>
+  <script src="js/enrichment-demo.js"></script>
+  <script src="js/demand-canvas.js"></script>
+  <script src="js/resource-demo.js"></script>
+  <script src="js/transform-demo.js"></script>
 </body>
 </html>
