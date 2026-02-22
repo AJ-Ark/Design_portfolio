@@ -422,7 +422,7 @@ a, button, [role="button"] {
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 900;
   margin-bottom: 1.5rem;
   color: var(--text-primary);
@@ -1837,7 +1837,7 @@ a, button, [role="button"] {
   grid-column: 1 / -1;
   text-align: center;
   max-width: 800px;
-  margin: 0 auto var(--space-lg) auto;
+  margin: 0 auto var(--space-md) auto;
 }
 
 .feature-label {
@@ -5562,7 +5562,7 @@ a, button, [role="button"] {
    =================================== */
 
 .section-failures {
-  padding: var(--section-gap) 0;
+  /* padding: var(--section-gap) 0; */
   
 }
 
