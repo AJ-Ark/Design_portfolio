@@ -6142,3 +6142,133 @@ a, button, [role="button"] {
     padding: 14px;
   }
 }
+
+/* ===================================
+   CORE PRINCIPLES — VISUAL CARDS
+   =================================== */
+
+/* Override grid to 3-col layout for visual cards */
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Visual principle card */
+.principle-visual-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  cursor: default;
+}
+
+.principle-visual-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-trmeric);
+}
+
+/* SVG diagram container */
+.principle-diagram {
+  width: 160px;
+  height: 160px;
+  display: block;
+  margin: 0 auto 20px;
+  overflow: visible;
+}
+
+/* Title + description inside visual card */
+.principle-visual-card .principle-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.principle-visual-card .principle-description {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Path draw-in animation ── */
+.path-animate {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 0;
+}
+
+.principle-visual-card:hover .path-animate {
+  animation: draw-path 0.9s ease forwards;
+}
+
+@keyframes draw-path {
+  from { stroke-dashoffset: 500; }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .principles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .principle-diagram {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* ── Innovation Architecture — Hover & Polish ── */
+.innovation-architecture {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.innovation-architecture:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 107, 53, 0.4);
+  box-shadow: 0 12px 40px rgba(255, 107, 53, 0.15);
+}
+
+.architecture-explanation {
+  border-left: 3px solid var(--trmeric-primary);
+}
+
+.arch-diagram {
+  min-height: 200px;
+}
+
+.design-decision-badge {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+.innovation-architecture:hover .design-decision-badge {
+  transform: scale(1.05);
+}
+
+/* Upgrade sub-11px SVG text to minimum legible size */
+.arch-diagram svg text[font-size="7"],
+.arch-diagram svg text[font-size="7"] {
+  font-size: 7px;
+}
+
+.arch-diagram svg text[font-size="9"] {
+  font-size: 11px;
+}
+
+@media (max-width: 1024px) {
+  .architecture-comparison {
+    grid-template-columns: 1fr;
+  }
+}
