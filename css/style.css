@@ -53,7 +53,7 @@
   --space-lg: 4rem;
   --space-xl: 8rem;
   --space-2xl: 8rem;
-  --section-gap: 8rem;
+  --section-gap: 4rem;
 
   /* TYPOGRAPHY */
   --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
@@ -142,7 +142,7 @@ a, button, [role="button"] {
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 8rem 2rem;
+  /* padding: 8rem 2rem; */
   /*  */
 }
 
@@ -247,10 +247,10 @@ a, button, [role="button"] {
 }
 
 .timeline-bar {
-  height: 12px;
+  height: 24px;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 6px;
+  border-radius: 12px;
   position: relative;
   overflow: hidden;
   display: flex;
